@@ -1,0 +1,23 @@
+schema {
+query: Query
+mutation: Mutation
+}
+
+type Vehicle {
+id: ID!,
+type: String,
+modelCode: String,
+brandName: String,
+launchDate: String
+}
+
+type Query {
+vehicles(count: String!):[Vehicle]
+vehicle(id: ID):Vehicle
+}
+
+type Mutation {
+createVehicle(type: String!, modelCode: String!, brandName: String, launchDate: String):Vehicle
+updateVehicle(id: String!, type: String!, modelCode: String!, brandName: String, launchDate: String):Vehicle
+deleteVehicle(id: String!):Vehicle
+}
